@@ -1,0 +1,7 @@
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^([^\.]+)$ $1.php [NC,L]
+
+RewriteCond %{REQUEST_URI} ^/404/$ [OR]
+RewriteCond %{REQUEST_URI} ^/500/$
+RewriteRule ^(.*)$ /error.php [L]
